@@ -19,7 +19,11 @@ Este proyecto es una aplicación móvil desarrollada con Ionic y Angular, diseñ
 ![Eliminación de un aviso](./capturas/5.png)
 ![Confirmación de eliminación de un aviso](./capturas/6.png)
 
-![Uso en dispositivo real](./capturas/testing.mp4)
+
+
+https://github.com/user-attachments/assets/f88ff8f4-5bac-474d-ac5c-174648b45dc3
+
+
 
 ## Instalación de Dependencias
 
