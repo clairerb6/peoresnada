@@ -31,7 +31,7 @@ Para configurar el entorno de desarrollo y ejecutar el proyecto, sigue los sigui
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone <URL_DEL_REPOSITORIO>
+    git clone https://github.com/clairerb6/peoresnada.git
     cd peoresnada
     ```
 
