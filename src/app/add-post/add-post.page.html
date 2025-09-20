@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Crear Aviso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="postForm" (ngSubmit)="savePost()">
+    <ion-list>
+      <ion-item>
+        <ion-input label="Título" labelPlacement="floating" formControlName="title" type="text"></ion-input>
+      </ion-item>
+      <div *ngIf="postForm.get('title')?.invalid && (postForm.get('title')?.touched || postForm.get('title')?.dirty)" class="validation-errors">
+        <p *ngIf="postForm.get('title')?.hasError('required')">El título es obligatorio.</p>
+        <p *ngIf="postForm.get('title')?.hasError('minlength')">El título debe tener al menos 5 caracteres.</p>
+      </div>
+
+      <ion-item>
+        <ion-textarea label="Descripción" labelPlacement="floating" formControlName="description" [autoGrow]="true"></ion-textarea>
+      </ion-item>
+      <div *ngIf="postForm.get('description')?.invalid && (postForm.get('description')?.touched || postForm.get('description')?.dirty)" class="validation-errors">
+        <p *ngIf="postForm.get('description')?.hasError('required')">La descripción es obligatoria.</p>
+        <p *ngIf="postForm.get('description')?.hasError('minlength')">La descripción debe tener al menos 20 caracteres.</p>
+      </div>
+
+      <ion-item lines="none">
+        <ion-button (click)="takePicture()" slot="start">
+          <ion-icon slot="start" name="camera"></ion-icon>
+          Tomar Foto
+        </ion-button>
+        <img *ngIf="imageData" [src]="imageData" class="thumbnail" />
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button type="submit" expand="block" [disabled]="postForm.invalid">
+      Guardar Aviso
+    </ion-button>
+  </form>
+</ion-content>
